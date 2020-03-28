@@ -12,7 +12,9 @@
     <Page.Resources>
         <local:BooleanToVisibilityConverter x:Key="BoolToVis" />
         <CollectionViewSource x:Key="countriesViewSourceKey" x:Name="countriesViewSource"
-            Source="{Binding}" />
+            Source="{Binding}" >
+            
+        </CollectionViewSource>
     </Page.Resources>
     <Page.BottomAppBar>
         <CommandBar                                               
@@ -127,7 +129,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1"
                           HorizontalScrollBarVisibility="Disabled"  Margin="2,5,2,15" 
                           VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <GridView Background="GhostWhite" Name="grd_Countries"  SelectionMode="Single"
+            <GridView Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Name="grd_Countries"  SelectionMode="Single"
                           VerticalAlignment="Stretch" HorizontalAlignment="Center" 
                           Margin="2,5,2,5" 
                           IsItemClickEnabled="True" SelectionChanged="grd_Countries_SelectionChanged"
@@ -153,12 +155,12 @@
                     <DataTemplate  x:Name="DataTemplate" x:DataType="localdata:CountryData">
                         <StackPanel Orientation="Horizontal" MinWidth="420"
                                 HorizontalAlignment="Center" Tapped="StackPanel_Tapped"
-                                CornerRadius="0" Background="WhiteSmoke"
+                                CornerRadius="0" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                                 Margin="12,2,12,2" Padding="5,0,5,0">
                             <Image Source="{Binding Flagfile}"  Height="30px"  Width="50px" Margin="10,10,10,10" />
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left">
-                                <TextBlock FontFamily="Segoe UI" FontSize="18px" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding Name}" />
-                                <TextBlock FontFamily="Segoe UI" FontSize="12px" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding ContinentName}" />
+                                <TextBlock FontFamily="Segoe UI" FontSize="18px" Foreground="{ThemeResource ApplicationForegroundThemeBrush}" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding Name}" />
+                                <TextBlock FontFamily="Segoe UI" FontSize="12px" Foreground="{ThemeResource ApplicationForegroundThemeBrush}" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding ContinentName}" />
 
                             </StackPanel>
                         </StackPanel>

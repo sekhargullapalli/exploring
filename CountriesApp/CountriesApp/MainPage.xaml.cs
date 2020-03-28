@@ -51,7 +51,7 @@ namespace CountriesApp
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.Auto;
             
             cmb_Continents.ItemsSource = DataProvider.CountryContext.Countries.Select(x => x.ContinentName).Distinct().OrderBy(c => c).ToList();
-            countriesViewSource.Source = FilteredCountries;
+            countriesViewSource.Source = FilteredCountries;            
             this.NavigationCacheMode = NavigationCacheMode.Enabled;
         }
 
@@ -97,9 +97,14 @@ namespace CountriesApp
             {
                 if (!FilteredCountries.Contains(item))
                 {
-                    FilteredCountries.Add(item);
+                    var index = FilteredCountries.ToList().BinarySearch(item);
+                    if (index < 0) index = ~index;
+                    FilteredCountries.Insert(index, item);                    
                 }
             }
+            //FilteredCountries = new ObservableCollection<CountryData>(FilteredCountries.OrderBy(x => x.Name));
+            //countriesViewSource.Source = FilteredCountries;
+
         }
         bool isCountryVisible(CountryData country)
         {
@@ -121,10 +126,13 @@ namespace CountriesApp
         }
         private void AppBarDisclaimer_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(DisclaimerPage));
         }
         private void SymbolIcon_PointerPressed(object sender, PointerRoutedEventArgs e)
-            => cmb_Continents.SelectedIndex = -1;
+        {
+            cmb_Continents.SelectedIndex = -1;
+            UpdateVisibility();
+        }
         private void clrIcon_PointerPressed(object sender, PointerRoutedEventArgs e)
             => txt_Search.Text = string.Empty;
 
