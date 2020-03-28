@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="CountriesApp.CountryDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CountriesApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.BottomAppBar>
+        <CommandBar                                               
+                    FontSize="23"
+                    FontFamily="Segoe UI"
+                    FontWeight="Bold"
+                    Background="#1FA2E1">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="AppBarBack" Icon="Back" Label="Back"
+                          Click="AppBarBack_Click"/>
+                <AppBarSeparator/>
+                <AppBarButton x:Name="AppBarForward" Icon="Forward" Label="Forward"
+                          Click="AppBarForward_Click"/>
+                <AppBarSeparator/>
+                <AppBarButton Icon="Important" Label="Disclaimer" 
+                          x:Name="AppBarDisclaimer" Click="AppBarDisclaimer_Click"/>
+                <AppBarButton Icon="Home"  Label="Home" 
+                          x:Name="AppBarHome" Click="AppBarHome_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+
+    </Grid>
+</Page>

@@ -120,6 +120,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="CountryDetailPage.xaml.cs">
+      <DependentUpon>CountryDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\CountryData.cs" />
     <Compile Include="Data\CountryDataContext.cs" />
     <Compile Include="Data\DataProvider.cs" />
@@ -943,6 +946,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CountryDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DisclaimerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
