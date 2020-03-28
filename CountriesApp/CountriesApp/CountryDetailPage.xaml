@@ -31,5 +31,133 @@
 
     <Grid>
 
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Name="sbDetails" HorizontalAlignment="Stretch"
+                  HorizontalScrollBarVisibility="Disabled" Padding="5,5,5,5" ZoomMode="Enabled">
+
+            <StackPanel VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch" 
+                Background="White" Orientation="Vertical">
+                <StackPanel Background="Black" Padding="2,2,2,5">
+                    <TextBlock FontFamily="Segoe UI" FontSize="23px"
+                   Foreground="WhiteSmoke"                    
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" Text="{Binding Name}" />
+                </StackPanel>
+                <Image Source="{Binding Flagfile}"  HorizontalAlignment="Center"  Height="160px"   Margin="10,10,10,10" />               
+
+                <StackPanel Background="WhiteSmoke" Padding="2,2,2,5" Margin="5,5,5,5"
+                        VerticalAlignment="Stretch">
+                    <TextBlock FontFamily="Segoe UI" FontSize="12px" Padding="1,1,1,1" TextAlignment="Justify"
+                   Foreground="Black" TextWrapping="Wrap"                  
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch" Text="Capital" />
+                    <TextBlock FontFamily="Segoe UI" FontSize="14px" Padding="1,1,1,1" TextAlignment="Justify"
+                   Foreground="Black" TextWrapping="Wrap"                  
+                   VerticalAlignment="Stretch" FontWeight="Bold"
+                   HorizontalAlignment="Stretch" Text="{Binding Capital}" />
+                    <TextBlock FontFamily="Segoe UI" FontSize="12px" Padding="1,1,1,1" TextAlignment="Justify" Margin="0,5,0,0"
+                   Foreground="Black" TextWrapping="Wrap"                  
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch" Text="Population (CIA factbook 2018)" />
+                    <TextBlock FontFamily="Segoe UI" FontSize="14px" Padding="1,1,1,1" TextAlignment="Justify"
+                   Foreground="Black" TextWrapping="Wrap"                  
+                   VerticalAlignment="Stretch" FontWeight="Bold"
+                   HorizontalAlignment="Stretch" Text="{Binding Population}" />
+                    <TextBlock FontFamily="Segoe UI" FontSize="12px" Padding="1,1,1,1" TextAlignment="Justify" Margin="0,5,0,0"
+                   Foreground="Black" TextWrapping="Wrap"                  
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch" Text="Continent" />
+                    <TextBlock FontFamily="Segoe UI" FontSize="14px" Padding="1,1,1,1" TextAlignment="Justify"
+                   Foreground="Black" TextWrapping="Wrap"                  
+                   VerticalAlignment="Stretch" FontWeight="Bold"
+                   HorizontalAlignment="Stretch" Text="{Binding ContinentName}" />
+                </StackPanel>
+
+                <StackPanel Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="WhiteSmoke">
+                    <GridView SelectionMode="None" Margin="5,5,5,5" Name="grdAKA" ItemsSource="{Binding AKA}" HorizontalAlignment="Stretch" Background="WhiteSmoke">
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid MaximumRowsOrColumns="1" Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                        <GridView.ItemContainerStyle>
+                            <Style TargetType="GridViewItem">
+                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </GridView.ItemContainerStyle>
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="1,2,1,2" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock FontFamily="Segoe UI" FontSize="12px" Foreground="Black" Grid.Row="0"
+                                       Width="{Binding ElementName=grdAKA,Path=ActualWidth}" MinWidth="280"
+                                           VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding Key}" />
+                                    <TextBlock FontFamily="Segoe UI" FontSize="14px" Foreground="Black" Grid.Row="1" 
+                                       MinWidth="{Binding ElementName=grdAKA,Path=ActualWidth}" FontWeight="Bold"
+                                           VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding Value}" />
+                                </Grid>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                </StackPanel>
+
+                <Image Source="{Binding LocatorMap}"  HorizontalAlignment="Center"  Height="240px" 
+                   Margin="10,10,10,10" />
+
+                <Image Source="{Binding Map}"  HorizontalAlignment="Center"  Height="240px" 
+                   Margin="10,10,10,10" />
+
+                <StackPanel Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="WhiteSmoke" Orientation="Vertical">
+                    <TextBlock FontFamily="Segoe UI" FontSize="14px" Padding="1,1,1,1" TextAlignment="Justify"
+                        Foreground="Black" TextWrapping="Wrap" FontWeight="Bold" Margin="5,1,1,1"              
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch" Text="Area" />
+                    <GridView SelectionMode="None" Margin="5,5,5,5" Name="grdArea" ItemsSource="{Binding Area}" HorizontalAlignment="Stretch" Background="WhiteSmoke">
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid MaximumRowsOrColumns="1" Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                        <GridView.ItemContainerStyle>
+                            <Style TargetType="GridViewItem">
+                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </GridView.ItemContainerStyle>
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="1,2,1,2" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock FontFamily="Segoe UI" FontSize="12px" Foreground="Black" Grid.Row="0"
+                                       MinWidth="{Binding ElementName=grdArea,Path=ActualWidth}"
+                                           VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding Key}" />
+                                    <TextBlock FontFamily="Segoe UI" FontSize="14px" Foreground="Black" Grid.Row="1" 
+                                           MinWidth="{Binding ElementName=grdArea,Path=ActualWidth}"
+                                        FontWeight="Bold"
+                                           VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding Value}" />
+                                </Grid>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                </StackPanel>
+
+                <StackPanel Background="WhiteSmoke" Padding="2,2,2,5" VerticalAlignment="Stretch" Margin="5,5,5,5">
+                    <TextBlock FontFamily="Segoe UI" FontSize="15px" Padding="5,5,5,5" TextAlignment="Justify"
+                   Foreground="Black" TextWrapping="Wrap"                  
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch" Text="{Binding Introduction}" />
+                </StackPanel>
+
+            </StackPanel>
+
+        </ScrollViewer>
+
     </Grid>
 </Page>

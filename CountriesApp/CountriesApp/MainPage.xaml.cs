@@ -138,7 +138,12 @@ namespace CountriesApp
 
         private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            ShowCountryDetails();
+        }
+        private void ShowCountryDetails()
+        {
+            if (grd_Countries.SelectedIndex != -1)
+                this.Frame.Navigate(typeof(CountryDetailPage), (grd_Countries.SelectedItem as CountryData).ID);
         }
     }
 }
