@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CountriesApp.Data
 {
-    public class CountryData
+    public class CountryData: IComparable<CountryData>
     {
         public string GEC { get; set; } = "";
         public string Name { get; set; } = "";
@@ -26,6 +28,15 @@ namespace CountriesApp.Data
         public string Map { get; set; } = string.Empty;
         public bool HasAnthem { get; set; } = true;
         public string ID { get; set; } = string.Empty;
+
+        public override bool Equals(object obj)
+        {
+            return obj is CountryData && Name == (obj as CountryData).Name;
+        }
+        public int CompareTo(CountryData other)
+        {
+            return this.Name.CompareTo(other.Name);
+        }
 
     }
 }
