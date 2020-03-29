@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="UnoCountries.Shared.DisclaimerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnoCountries.Shared"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#222428">
+
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer HorizontalAlignment="Stretch" Grid.Row="0"
+                      VerticalAlignment="Stretch"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    Background="#222428">
+                <StackPanel Background="#222428" Padding="2,2,2,5" MinHeight="50">
+                    <TextBlock FontFamily="Segoe UI" FontSize="23px" Foreground="#6C6E72" Padding="0,5,0,0"                   
+                        VerticalAlignment="Center" HorizontalAlignment="Center" Text="Disclaimer" />
+                </StackPanel>
+                <TextBlock FontFamily="Segoe UI" FontSize="15px" Margin="20"
+                       Padding="5,5,5,5" TextAlignment="Justify"
+                   Foreground="#6C6E72" TextWrapping="Wrap"                  
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch"
+                       Text="{Binding Disclaimer}" />
+            </StackPanel>        
+
+        </ScrollViewer>
+
+        <AppBar
+            Grid.Row="1"
+            VerticalAlignment="Bottom"
+                    FontSize="23"
+                    FontFamily="Segoe UI"
+                    FontWeight="Bold"
+                    Background="#1FA2E1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <AppBarButton x:Name="AppBarBack" Label="Back"
+                          Click="AppBarBack_Click">
+                    <AppBarButton.Icon>
+                        <BitmapIcon UriSource="./backicon.png"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarSeparator/>
+                <AppBarButton x:Name="AppBarForward" Label="Forward"
+                          Click="AppBarForward_Click">
+                    <AppBarButton.Icon>
+                        <BitmapIcon UriSource="./forwardicon.png"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarSeparator/>
+                <AppBarButton  Label="Home" 
+                          x:Name="AppBarHome" Click="AppBarHome_Click">
+                    <AppBarButton.Icon>
+                        <BitmapIcon UriSource="./homeicon.png"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </StackPanel>
+        </AppBar>
+
+    </Grid>
+
+    
+
+
+</Page>
