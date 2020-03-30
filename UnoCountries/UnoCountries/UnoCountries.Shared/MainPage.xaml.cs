@@ -36,7 +36,7 @@ namespace UnoCountries
 
             cmb_Continents.ItemsSource = DataProvider.CountryContext.Countries.Select(x => x.ContinentName).Distinct().OrderBy(c => c).ToList();
             grd_Countries.ItemsSource = FilteredCountries;
-            this.NavigationCacheMode = NavigationCacheMode.Enabled;
+            this.NavigationCacheMode = NavigationCacheMode.Enabled; 
         }
 
         private void cmb_Continents_SelectionChanged(object sender, SelectionChangedEventArgs e)

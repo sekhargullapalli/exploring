@@ -43,6 +43,7 @@
     <PackageReference Include="Uno.UI" Version="2.0.532" />
     <PackageReference Include="Uno.UI.RemoteControl" Version="2.0.532" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.10" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
     <DotNetCliToolReference Include="Uno.Wasm.Bootstrap.Cli" Version="1.0.10" />
   </ItemGroup>
   <Import Project="..\UnoCountries.Shared\UnoCountries.Shared.projitems" Label="Shared" Condition="Exists('..\UnoCountries.Shared\UnoCountries.Shared.projitems')" />

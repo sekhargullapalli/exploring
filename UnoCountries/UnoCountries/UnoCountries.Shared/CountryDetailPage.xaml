@@ -156,27 +156,27 @@
                 <AppBarButton x:Name="AppBarBack" Label="Back"
                           Click="AppBarBack_Click">
                     <AppBarButton.Icon>
-                        <BitmapIcon UriSource="./backicon.png"/>
+                        <BitmapIcon UriSource="ms-appx:///Assets/icons/backicon.png"/>
                     </AppBarButton.Icon>
                 </AppBarButton>
                 <AppBarSeparator/>
                 <AppBarButton x:Name="AppBarForward" Label="Forward"
                           Click="AppBarForward_Click">
                     <AppBarButton.Icon>
-                        <BitmapIcon UriSource="./forwardicon.png"/>
+                        <BitmapIcon UriSource="ms-appx:///Assets/icons/forwardicon.png"/>
                     </AppBarButton.Icon>
                 </AppBarButton>
                 <AppBarSeparator/>
                 <AppBarButton Label="Disclaimer" 
                           x:Name="AppBarDisclaimer" Click="AppBarDisclaimer_Click">
                     <AppBarButton.Icon>
-                        <BitmapIcon UriSource="./disclaimericon.png"/>
+                        <BitmapIcon UriSource="ms-appx:///Assets/icons/disclaimericon.png"/>
                     </AppBarButton.Icon>
                 </AppBarButton>
                 <AppBarButton Label="Home" 
                           x:Name="AppBarHome" Click="AppBarHome_Click">
                     <AppBarButton.Icon>
-                        <BitmapIcon UriSource="./homeicon.png"/>
+                        <BitmapIcon UriSource="ms-appx:///Assets/icons/homeicon.png"/>
                     </AppBarButton.Icon>
                 </AppBarButton>
             </StackPanel>

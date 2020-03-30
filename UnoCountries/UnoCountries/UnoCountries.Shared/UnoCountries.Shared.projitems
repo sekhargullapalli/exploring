@@ -44,6 +44,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\AppStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Assets\flags\AA_flag.gif" />
@@ -307,9 +311,12 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\flags\ZA_flag.gif" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\flags\ZI_flag.gif" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\icons\backicon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\icons\clear48.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\icons\disclaimericon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\icons\filter48.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\icons\forwardicon.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\icons\homeicon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\icons\search48.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\locatormaps\AA_locator_map.gif" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\locatormaps\AC_locator_map.gif" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\locatormaps\AE_locator_map.gif" />
@@ -853,5 +860,8 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Navigation\" />
   </ItemGroup>
 </Project>
